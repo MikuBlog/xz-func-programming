@@ -3,3 +3,5 @@
 		// 从后往前剪切数组(当k等于三时，则从最后一个元素往前剪切三个),然后连接数组,完成数组旋转
 		return arr.splice(-k % arr.length).concat(arr)
 	}
+	
+	rotateArray([1, 2, 3, 4, 5], 3) // [3, 4, 5, 1, 2]
