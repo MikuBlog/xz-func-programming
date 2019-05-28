@@ -23,4 +23,4 @@
 		foo.prototype = new t()
 		// 返回绑定后的函数
 		return foo
-	}
+	} 
