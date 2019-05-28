@@ -4,4 +4,4 @@
 		return arr.splice(-k % arr.length).concat(arr)
 	}
 	
-	rotateArray([1, 2, 3, 4, 5], 3) // [3, 4, 5, 1, 2]
+	rotateArray([1, 2, 3, 4, 5], 3) // [3, 4, 5, 1, 2] 
