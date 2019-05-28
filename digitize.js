@@ -3,4 +3,4 @@
 		return [...`${n}`].map(v => parseInt(v))
 	}
 	
-	digitize(1001)// [1, 0, 0 ,1]
+	digitize(1001)// [1, 0, 0 ,1] 
