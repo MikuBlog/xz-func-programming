@@ -3,5 +3,5 @@
 		return arr.filter(fn).pop()
 	}
 	
-	findLast([1, 2, 3, 4, 5], n => n <= 3) // 3
+	findLast([1, 2, 3, 4, 5], n => n <= 3) // 3 
 	
