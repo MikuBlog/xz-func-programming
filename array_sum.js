@@ -1,4 +1,4 @@
-	// 数组元素求和
+	// 使用reduce完成数组元素求和
 	function sum(arr) {
 		return arr.reduce((acc, val) => acc + val, 0)
 	}
