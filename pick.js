@@ -1,4 +1,4 @@
-	// 去除对象中的键值
+	// 保留对象中对应的键值
 	function pick(obj, arr) {
 		return arr.reduce((acc, key) => (key in obj && (acc[key] = obj[key]), acc), {})
 	}
