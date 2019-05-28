@@ -9,4 +9,4 @@
 		}, {})
 	}
 	
-	parseCookie('foo=bar; equation=E%3Dmc%5E2')// { foo: 'bar', equation: 'E=mc^2' }
+	parseCookie('foo=bar; equation=E%3Dmc%5E2')// { foo: 'bar', equation: 'E=mc^2' } 
