@@ -3,4 +3,4 @@
 		return getComputedStyle(el)[ruleName]
 	}
 	
-	getStyle(document.querySelector('.float'), 'width')// 100px
+	getStyle(document.querySelector('.float'), 'width')// 100px 
