@@ -7,7 +7,6 @@
 			timeout = null
 			callback.apply(context, args)
 		}
-		// 防抖函数
 		var throttled = function() {
 			// 设置当前时间
 			var now = +new Date()
