@@ -8,4 +8,4 @@
 			// 调用相关函数
 			return fn.apply(this, newArgs)
 		}
-	}
+	} 
