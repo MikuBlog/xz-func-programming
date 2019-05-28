@@ -28,6 +28,6 @@
 				})
 			}
 			// 调用函数
-			step(() =>return gen.next(undefined))
+			step(() => return gen.next(undefined))
 		})
 	}
