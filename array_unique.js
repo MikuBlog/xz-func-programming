@@ -19,7 +19,7 @@
 		})
 	}
 	
-	// 使用ES6的Set类数组去重
+	// 使用ES6的Set类数组去重（一维数组）
 	function unique_3(array) {
 		return [...new Set(array)]
 	}
