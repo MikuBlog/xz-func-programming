@@ -5,4 +5,4 @@
 		return arr.length % 2 !== 0 ? num[mid] : (num[mid - 1] + num[mid]) / 2
 	}
 	
-	median([2, 1, 3, 5, 4, 7])// 3.5
+	median([2, 1, 3, 5, 4, 7])// 3.5 
