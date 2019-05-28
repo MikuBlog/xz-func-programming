@@ -10,4 +10,4 @@
 		var ret = Constructor.apply(obj, arguments)
 		// 如果返回的值不是对象,则按原值返回
 		return typeof ret === 'object' ? ret : obj
-	}
+	} 
