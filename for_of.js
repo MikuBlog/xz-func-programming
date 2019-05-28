@@ -16,4 +16,4 @@
 			cb(result.value)
 			result = iterator.next()
 		}
-	}
+	} 
