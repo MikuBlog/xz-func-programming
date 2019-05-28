@@ -25,4 +25,4 @@
 	
 	const a = curry_2((val_1, val_2, val_3) => val_1 + val_2 + val_3)(1)
 	const b = a(2)
-	b(3)// 6
+	b(3)// 6 
