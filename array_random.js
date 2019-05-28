@@ -1,4 +1,4 @@
-	// 数组彻底乱序
+	// 数组乱序（彻底乱序）
 	function shuffle(array) {
 		var i, j, t 
 		// 通过遍历数组,随机调换数组元素
