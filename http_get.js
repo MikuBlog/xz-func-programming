@@ -9,4 +9,4 @@
 	
 	httpGet("http://myinterface.xuanzai.top/getData", (value) => {
 		console.log(value)
-	})
+	}) 
