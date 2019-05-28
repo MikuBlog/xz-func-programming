@@ -1,4 +1,4 @@
-	// 选取对象中的属性
+	// 通过键值，过滤对象中的字段
 	function pickBy(obj, fn) {
 		return Object.keys(obj)
 			.filter(k => fn(obj[k]))
