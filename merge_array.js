@@ -1,4 +1,4 @@
-	// 合并数组,并除重复部分
+	// 合并数组,并去除重复部分
 	function merge_array(arr_1, arr_2) {
 		// 创建两个set,去重。
 		const set_1 = new Set(arr_1), set_2 = new Set(arr_2)
