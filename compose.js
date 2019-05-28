@@ -1,4 +1,4 @@
-	// 多函数合并(从后往前合并)
+	// 多函数合并(从后往前执行合并后的函数)
 	function compose() {
 		var args = arguments
 		var start = args.length - 1
@@ -10,4 +10,4 @@
 			// 返回最终结果
 			return result
 		}
-	}
+	} 
