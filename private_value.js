@@ -24,4 +24,4 @@
 			}
 		}
 		return Example_2
-	})()
+	})() 
