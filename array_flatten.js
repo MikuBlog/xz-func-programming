@@ -23,7 +23,7 @@
 			Array.isArray(items) ?
 			// 如果为数组,继续递归,返回的新数组连接到旧数组上
 			result = result.concat(simplifyArray(items)) :
-			// 如果不为数组,则直接将元素添加到数组中
+			// 如果不为数组,则直接将元素添加到数组末尾
 			result.push(items)
 		})
 		return result
@@ -37,7 +37,7 @@
 			Array.isArray(item) ? 
 			// 如果为数组,扁平化
 			myArray.push(...simplifyArray(item)) : 
-			// 如果不是数组,直接将元素添加到数组中
+			// 如果不是数组,直接将元素添加到数组末尾
 			myArray.push(item)
 		})
 		return myArray
