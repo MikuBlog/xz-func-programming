@@ -4,4 +4,4 @@
 	}
 	
 	console.log(isBrowser())// true(browser)
-	console.log(isBrowser())// false(Node)
+	console.log(isBrowser())// false(Node) 
