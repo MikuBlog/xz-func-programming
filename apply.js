@@ -10,7 +10,7 @@
 		for(var i = 0, len = arr.length; i < len; i ++) {
 			args.push(arr[i])
 		}
-		// 执行函数并返回结果
+		// 传入参数执行函数并返回结果
 		var result = eval('context.fn(' + arr + ')')
 		// 删除函数属性
 		delete context.fn
