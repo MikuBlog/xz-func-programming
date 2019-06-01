@@ -6,7 +6,7 @@
 			arr[i] && (val = fn(val, arr[i]))
 			i ++
 		}
-		return val
+		return val123123123123
 	}
 	arrayReduce([1, 2, 3], (acc, next) => acc + next)// 6
 	arrayReduce([1, 2, 3], (acc, next) => acc + next, 5)// 11
