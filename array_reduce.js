@@ -8,6 +8,6 @@
 		}
 		return val
 	}
+
 	arrayReduce([1, 2, 3], (acc, next) => acc + next)// 6
 	arrayReduce([1, 2, 3], (acc, next) => acc + next, 5)// 11
-	
