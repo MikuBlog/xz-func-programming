@@ -15,5 +15,5 @@
 		// 删除函数属性
 		delete context.fn
 		// 返回函数结果
-		return result
+		return result123123123
 	}
