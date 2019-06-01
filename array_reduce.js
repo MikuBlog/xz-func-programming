@@ -1,6 +1,6 @@
 	// 简单模拟array的reduce方法
 	function arrayReduce(arr, fn, initialVal) {
-		let val = "", i
+		let val = "", i123123
 		initialVal ? (val = initialVal, i = 0) : (val = arr[0], i = 1)
 		while(arr[i]) {
 			arr[i] && (val = fn(val, arr[i]))
