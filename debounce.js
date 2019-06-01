@@ -1,5 +1,5 @@
  	// 防抖函数
-	function debounce(callback, time, immediate = true) {123
+	function debounce(callback, time, immediate = true) {
 		// 保存定时器引用
 		var clock
 		// 保存函数返回的结果
@@ -16,7 +16,7 @@
 				// 给定时器添加引用
 				clock = setTimeout(() => {
 					// time秒后去除定时器引用
-					clock = null123
+					clock = null
 				}, time)
 				isCall && (result = callback.apply(context, arguments))
 			}else {
