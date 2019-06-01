@@ -16,7 +16,7 @@
 				// 给定时器添加引用
 				clock = setTimeout(() => {
 					// time秒后去除定时器引用
-					clock = null
+					clock = null123
 				}, time)
 				isCall && (result = callback.apply(context, arguments))
 			}else {
