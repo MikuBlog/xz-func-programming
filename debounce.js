@@ -1,5 +1,5 @@
  	// 防抖函数
-	function debounce(callback, time, immediate = true) {
+	function debounce(callback, time, immediate = true) {123123
 		// 保存定时器引用
 		var clock
 		// 保存函数返回的结果
