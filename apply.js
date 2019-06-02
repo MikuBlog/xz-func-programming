@@ -1,6 +1,6 @@
 	// 模拟实现apply
 	Function.prototype.myApply = function(context, arr) {
-		// 判断传入的对象是否为空, 如果为空,则使用全局对象123123123
+		// 判断传入的对象是否为空, 如果为空,则使用全局对象
 		var context = context || window
 		// 存放参数
 		var args = []
