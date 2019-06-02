@@ -1,4 +1,4 @@
-	// 模拟实现filter函数123123123
+	// 模拟实现filter函数
 	function arrayFilter(arr, fn) {
 		let newArray = []
 		for(let i = 0, len = arr.length; i < len; i ++) {
