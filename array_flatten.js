@@ -41,4 +41,4 @@
 			myArray.push(item)
 		})
 		return myArray
-	}
+	} 
