@@ -3,4 +3,4 @@
 		return str.replace(/\s{2,}/g, ' ')
 	}
 	
-	compactWhiteSpace("I am     xuan  \n\n\n zai")// I am xuan zai
+	compactWhiteSpace("I am     xuan  \n\n\n zai")// I am xuan zai 
