@@ -4,4 +4,4 @@
 	}
 	
 	minBy([{n: 3}, {n: 5}, {n: 1}], 'n')// 1
-	minBy([{n: 3}, {n: 5}, {n: 1}], val => val.n)// 1
+	minBy([{n: 3}, {n: 5}, {n: 1}], val => val.n)// 1 
