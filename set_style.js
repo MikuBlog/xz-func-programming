@@ -3,4 +3,4 @@
 		el.style[ruleName] = value
 	}
 	
-	setStyle(document.querySelector('.red'), 'font-size', '100px')
+	setStyle(document.querySelector('.red'), 'font-size', '100px') 
