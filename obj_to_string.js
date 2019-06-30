@@ -1,4 +1,4 @@
-    // 对象序列化
+    		// 对象序列化
 		function objToString(obj) {
 			let str = ""
 			for(let key in obj) {
