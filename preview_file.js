@@ -20,11 +20,8 @@
 			let newPage = window.open('', type)
 			iframe.src = `https://view.officeapps.live.com/op/view.aspx?src=${url}`
 			newPage.document.body.appendChild(iframe)
+			newPage.document.body.style.margin = "0"
 		}else {
 			window.open(url)
 		}	
-	}
-
-	export default {
-		previewFile
 	}
