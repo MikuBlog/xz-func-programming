@@ -1,4 +1,8 @@
-	// 文件在线预览
+	/**
+	 * @author xuanzai
+	 * @description 在线预览文件
+	 * @param {String} url 
+	 */
 	function previewFile(url) {
 		if(!url) {
 			return
@@ -12,11 +16,15 @@
 				width: 100%;
 				height: 100%;
 			`
-		if(type == 'doc'|| type == 'docx'|| type == 'xls' || type == 'xlsx') {
+		if(type == 'doc'|| type == 'docx'|| type == 'xls' || type == 'xlsx' || type == 'ppt' || type == 'pptx') {
+			let newPage = window.open('', type)
 			iframe.src = `https://view.officeapps.live.com/op/view.aspx?src=${url}`
-			newPage = window.open('', '_blank')
 			newPage.document.body.appendChild(iframe)
 		}else {
 			window.open(url)
 		}	
+	}
+
+	export default {
+		previewFile
 	}
