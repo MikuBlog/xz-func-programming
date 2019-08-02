@@ -24,4 +24,4 @@
 	})
 	
 	type.isObject({}) // true
-	type.isNumber(1) // true
+	type.isNumber(1) // true 
