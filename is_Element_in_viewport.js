@@ -17,4 +17,4 @@
 			elBottom < viewHeight + elHeight &&
 			elRight < viewWidth + elWidth
 		)
-	}
+	} 
