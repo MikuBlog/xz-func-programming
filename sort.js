@@ -1,5 +1,5 @@
 	// 排序
-	function sortList(list, isDes, property) {
+	function sortList(list, isDes = false, property) {
 		if(property) {
 			return list.sort((a, b) => {
 				return isDes 
