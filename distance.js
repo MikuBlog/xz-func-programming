@@ -1,5 +1,5 @@
 // 获取地球两点间直线距离
-function getCheckPointDistance(p1, p2) {
+function getDistance(p1, p2) {
 	let radLat1 = (p1.lat * Math.PI) / 180.0;
 	let radLat2 = (p2.lat * Math.PI) / 180.0;
 	let a = radLat1 - radLat2;
