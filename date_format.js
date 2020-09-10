@@ -21,3 +21,35 @@
 		isAccurate && (newDate = `${date.toISOString().split("T")[0]} ${date.toISOString().split("T")[1].split('.')[0]}`)
 		return newDate
 	}
+	
+	function getFirstDate() {
+		let date = new Date()
+		date.setDate(1)
+		return formDate_2(date)
+	}
+	
+	function getLastDate() {
+		let date = new Date()
+		date.setMonth(date.getMonth() + 1)
+		return formDate_2(new Date(date).setDate(0))
+	}
+	
+	function getPreMonth(n) {
+		let date = new Date()
+		date.setMonth(date.getMonth() - n)
+		return formDate_2(date)
+	}
+	
+	function getPreDate(n) {
+		return formDate_2(new Date().getTime() - n * 1000 * 60 * 60 * 24)
+	}
+	
+	function getLastMonth(n) {
+		let date = new Date()
+		date.setMonth(date.getMonth() + n)
+		return formDate_2(date)
+	}
+	
+	function getLastDate(n) {
+		return formDate_2(new Date().getTime() + n * 1000 * 60 * 60 * 24)
+	}
