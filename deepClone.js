@@ -1,32 +1,33 @@
 /**
- * 对象深拷贝
- 思路：
- 1. 对于Date、Regexp、Set、Map、WeakSet、WeakMap对象通过构造函数重新创建即可，对于数组则需要额外添加一个length值，对于对象则普通赋值与递归深拷贝
- 2. 保持深拷贝对象的原型值，这里使用到Object.create
- 3. 使用hash来保存每次遍历的对象，避免因为多次遍历同一个对象导致循环引用问题的出现
+ * 注意点：
+ * 1. 避免循环引用（即赋值过的对象如果又出现在属性中，则无需再进行遍历赋值）
+ * 2. 对于Date、Regexp、Set、WeakSet、Map、WeakMap之间new即可
+ * 3. 保持赋值对象的原型属性
+ * 4. for in会遍历原型链上的属性，为了避免这种情况，需用hasOwnProperty判断
+ * JSON.stringify()深拷贝的弊端
+ * 1. 忽略undefined与函数
+ * 2. regexp、error、map、set、weakmap、weakset会全部转为普通对象且没有任何值
+ * 3. Date会转为字符串日期
+ * 4. infinity、-infinity、NaN转为null
+ * 5. constructor消失
+ * 6. 无法处理循环引用（报错）
  */
-function deepClone(obj, hash = new WeakMap()) {
-	// 解决循环引用，避免因为循环运用而不断递归
-	if (hash.has(obj)) return hash.get(obj)
-	let type = [Date, RegExp, Set, Map, WeakSet, WeakMap]
-	if (type.includes(obj.constructor)) {
-		return new obj.constructor(obj)
+function deepCopy(source, store = new WeakMap()) {
+	if (store.has(source)) return store.get(source)
+	let types = [Date, RegExp, Set, WeakSet, Map, WeakMap, Error]
+	if (types.includes(source.constructor)) {
+		return new source.constructor(source)
 	}
-	// 保存对象的原型值
-	let newObj = Object.create(Object.getPrototypeOf(obj))
-	// 保存遍历过的对象，在下次拷贝的时候用来避免循环引用
-	hash.set(obj, newObj)
-	// 遍历与递归完成对象所有属性的深拷贝
-	for (let key in obj) {
-		if (Array.isArray(obj[key])) {
-			let arr = deepClone(obj[key], hash)
-			arr.length = Object.keys(arr).length
-			newObj[key] = arr
-		} else if (typeof obj[key] === 'object') {
-			newObj[key] = deepClone(obj[key], hash)
-		} else {
-			newObj[key] = obj[key]
+	let target = Array.isArray(source) ? [] : Object.create(Object.getPrototypeOf(source))
+	store.set(source, target)
+	for (let key in source) {
+		if (source.hasOwnProperty(key)) {
+			if (typeof source[key] === 'object' && source[key] !== null) {
+				target[key] = deepCopy(source[key], store)
+			} else {
+				target[key] = source[key]
+			}
 		}
 	}
-	return newObj
+	return target
 }

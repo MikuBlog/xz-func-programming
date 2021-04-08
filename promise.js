@@ -17,15 +17,19 @@ function Promise(executor) {
 	self.onFulfilled = [] // 成功回调
 	self.onRejected = [] // 失败回调
 	function resolve(value) {
-		self.status = 'fulfilled'
-		self.value = value
-		self.onFulfilled.forEach(fn => fn())
+		if(self.status === 'pending') {
+			self.status = 'fulfilled'
+			self.value = value
+			self.onFulfilled.forEach(fn => fn())
+		}
 	}
 
 	function reject(reason) {
-		self.status = 'rejected'
-		self.reason = reason
-		self.onRejected.forEach(fn => fn())
+		if(self.status === 'pending') {
+			self.status = 'rejected'
+			self.reason = reason
+			self.onRejected.forEach(fn => fn())
+		}
 	}
 	try {
 		executor(resolve, reject)
@@ -39,7 +43,6 @@ Promise.prototype.then = function(onFulfilled, onRejected) {
 	onRejected = typeof onRejected === 'function' ? onRejected : reason => {
 		throw reason
 	}
-	let self = this
 	let promise = new Promise((resolve, reject) => {
 		if (self.status === 'fulfilled') {
 			setTimeout(_ => {
@@ -107,11 +110,9 @@ Promise.prototype.catch = function(onRejected) {
  * 2. 且仅会将上一个promise的值传递到下一个promise去，自身只作为promise中间层使用
  */
 Promise.prototype.finally = function(callback) {
-	return this.then((value) => {
-		return Promise.resolve(callback()).then(() => {
-			return value
-		})
-	}, (err) => {
+	return this.then(value => {
+		return Promise.resolve(callback()).then(() => value)
+	}, err => {
 		return Promise.resolve(callback()).then(() => {
 			throw err
 		})
@@ -143,7 +144,7 @@ Promise.all = function() {
 				if (++times === promises.length) {
 					resolve(result)
 				}
-			}).catch(reject)
+			}, reject)
 		}
 	})
 }
